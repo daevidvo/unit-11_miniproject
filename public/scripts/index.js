@@ -135,7 +135,17 @@ const submitDiagnostics = (submissionObj) => {
   console.info(
     '⚠️ Create the logic for the fetch POST request in scripts/index.js'
   );
-  alert('Add your logic to scripts/index.js');
+
+  let errorMessage = ""
+
+  if(submissionObj.errors.tip) {
+    errorMessage += submissionObj.errors.tip + "\n";
+  }
+
+  if(submissionObj.errors.username) {
+    errorMessage += submissionObj.errors.username + "\n";
+  }
+  alert(errorMessage);
 };
 
 // Function to handle when a user submits the feedback form
